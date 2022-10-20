@@ -24,7 +24,7 @@ jobs:
           body: Hello, world!
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish Release
-        uses: Frederick888/publish-release@master
+        uses: Frederick888/publish-release@bump-deps
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
