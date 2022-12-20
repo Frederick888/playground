@@ -1,0 +1,24 @@
+name: Compute tag
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compute_tag_version:
+    name: Compute Tag Version
+    runs-on: ubuntu-latest
+    outputs:
+      next_tag: ${{ steps.compute_tag.outputs.next_tag }}
+      previous_tag: ${{ steps.compute_tag.outputs.previous_tag }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Compute release tag
+        id: compute_tag
+        uses: Frederick888/compute-tag@node16
+        with:
+          github_token: ${{ github.token }}
+          version_scheme: continuous
