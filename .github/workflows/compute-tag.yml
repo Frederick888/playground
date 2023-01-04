@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  pull_request:
 
 jobs:
   compute_tag_version:
@@ -18,7 +19,8 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Compute release tag
         id: compute_tag
-        uses: Frederick888/compute-tag@node16
+        uses: craig-day/compute-tag@master
         with:
           github_token: ${{ github.token }}
           version_scheme: continuous
+          branch: sample-branch
