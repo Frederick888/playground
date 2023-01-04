@@ -19,7 +19,7 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Compute release tag
         id: compute_tag
-        uses: craig-day/compute-tag@master
+        uses: Frederick888/compute-tag@fix-list-commits
         with:
           github_token: ${{ github.token }}
           version_scheme: continuous
