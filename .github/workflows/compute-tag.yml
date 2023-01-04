@@ -24,3 +24,7 @@ jobs:
           github_token: ${{ github.token }}
           version_scheme: continuous
           branch: sample-branch
+      - name: Print release tags
+        run: |
+          printf 'Next tag is: %s\n' '${{ steps.compute_tag.outputs.next_tag }}'
+          printf 'Previous tag is: %s\n' '${{ steps.compute_tag.outputs.previous_tag }}'
