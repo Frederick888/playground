@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  pull_request:
 
 jobs:
   compute_tag_version:
@@ -18,7 +19,12 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Compute release tag
         id: compute_tag
-        uses: Frederick888/compute-tag@node16
+        uses: Frederick888/compute-tag@fix-list-commits
         with:
           github_token: ${{ github.token }}
           version_scheme: continuous
+          branch: sample-branch
+      - name: Print release tags
+        run: |
+          printf 'Next tag is: %s\n' '${{ steps.compute_tag.outputs.next_tag }}'
+          printf 'Previous tag is: %s\n' '${{ steps.compute_tag.outputs.previous_tag }}'
