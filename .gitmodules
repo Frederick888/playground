@@ -1,0 +1,6 @@
+[submodule "gitlab"]
+	path = gitlab
+	url = https://git.tsundere.moe/Frederick888/frederick-settings.git
+[submodule "github"]
+	path = github
+	url = https://github.com/Frederick888/gh-ph.git
