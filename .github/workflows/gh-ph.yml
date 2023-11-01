@@ -16,6 +16,6 @@ jobs:
       - run: |
           git remote set-branches origin '*'
           git fetch --depth 100
-      - uses: Frederick888/gh-ph@fix-pub-fork
+      - uses: Frederick888/gh-ph@v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
