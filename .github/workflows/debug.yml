@@ -1,0 +1,12 @@
+on:
+  pull_request:
+
+jobs:
+  debug:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Print
+        shell: bash
+        run: |
+          printf 'The github context is \n%s\n\n\n' '${{ toJSON(github) }}'
+          printf 'Whether the PR is locked: %s\n' '${{ github.event.pull_request.locked }}'
