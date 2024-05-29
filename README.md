@@ -12,3 +12,5 @@ Commit 1 on test-diff only
 Branch 1
 
 From PR 1
+
+Commit 2 on test-diff
