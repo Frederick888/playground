@@ -1,11 +1,11 @@
 {
   "name": "playground",
   "license": "Apache-2.0",
-  "resolutions": {
-    "typescript": "4.8.4"
-  },
+  "packageManager": "yarn@3.8.4",
   "version": "0.0.0",
   "dependencies": {
-    "istextorbinary": "^9.5.0"
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.4"
   }
 }
