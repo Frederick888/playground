@@ -1,6 +1,6 @@
 {
   "name": "@playground/bar",
-  "version": "workspace:^",
+  "version": "0.0.1",
   "devDependencies": {
     "eslint": "=9.9.0",
     "jest": "=29.7.0"

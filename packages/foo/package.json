@@ -1,4 +1,7 @@
 {
   "name": "@playground/foo",
-  "version": "workspace:^"
+  "version": "0.0.1",
+  "dependencies": {
+    "@playground/bar": "workspace:^"
+  }
 }

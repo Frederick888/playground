@@ -3,5 +3,14 @@
     {
       "range": "^"
     }
+  ],
+  "versionGroups": [
+    {
+      "label": "Use workspace protocol when developing local packages",
+      "dependencies": [
+        "@playground/*"
+      ],
+      "pinVersion": "workspace:^"
+    }
   ]
 }

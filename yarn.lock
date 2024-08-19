@@ -853,7 +853,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playground/bar@workspace:packages/bar":
+"@playground/bar@workspace:^, @playground/bar@workspace:packages/bar":
   version: 0.0.0-use.local
   resolution: "@playground/bar@workspace:packages/bar"
   dependencies:
@@ -865,6 +865,8 @@ __metadata:
 "@playground/foo@workspace:packages/foo":
   version: 0.0.0-use.local
   resolution: "@playground/foo@workspace:packages/foo"
+  dependencies:
+    "@playground/bar": "workspace:^"
   languageName: unknown
   linkType: soft
 

@@ -1455,7 +1455,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/foo", {\
           "packageLocation": "./packages/foo/",\
           "packageDependencies": [\
-            ["@playground/foo", "workspace:packages/foo"]\
+            ["@playground/foo", "workspace:packages/foo"],\
+            ["@playground/bar", "workspace:packages/bar"]\
           ],\
           "linkType": "SOFT"\
         }]\
