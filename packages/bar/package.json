@@ -1,0 +1,16 @@
+{
+  "name": "@playground/bar",
+  "version": "1.0.0",
+  "dependencies": {
+    "@playground/shared": "workspace:^"
+  },
+  "main": "dist/index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc -b && tsc-alias",
+    "start": "node ./dist"
+  },
+  "devDependencies": {
+    "tsc-alias": "^1.8.10"
+  }
+}

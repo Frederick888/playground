@@ -1,11 +1,16 @@
 {
   "name": "playground",
   "license": "Apache-2.0",
-  "resolutions": {
-    "typescript": "4.8.4"
-  },
   "version": "0.0.0",
-  "dependencies": {
-    "istextorbinary": "^9.5.0"
-  }
+  "packageManager": "yarn@4.4.1",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "build": "yarn workspaces foreach --all --topological run build",
+    "bar:start": "yarn workspace @playground/bar run start"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

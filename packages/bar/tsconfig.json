@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "paths": {
+      "@src/*": [
+        "src/*"
+      ],
+      "@playground/shared/*": [
+        "../shared/dist/src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "spec/**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../shared"
+    }
+  ]
+}

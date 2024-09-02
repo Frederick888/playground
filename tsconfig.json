@@ -1,27 +1,11 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "declarationMap": true,
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es2019",
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strictNullChecks": true,
-    "strict": true,
-    "sourceMap": true,
-    "incremental": true,
-    "composite": true,
-    "noEmitOnError": true,
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "useUnknownInCatchVariables": false
-  },
-  "files": [
-    "./src/index.ts"
-  ],
-  "include": []
+  "extends": "./tsconfig.base.json",
+  "references": [
+    {
+      "path": "./packages/shared"
+    },
+    {
+      "path": "./packages/bar"
+    }
+  ]
 }
