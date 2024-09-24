@@ -4,7 +4,21 @@
   "version": "0.0.0",
   "packageManager": "yarn@4.4.1",
   "devDependencies": {
-    "typescript": "^5.5.4"
+    "@eslint/js": "^9.11.1",
+    "@types/debug": "^4",
+    "@types/eslint__js": "^8.42.3",
+    "debug": "^4.3.7",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-node": "^0.3.9",
+    "eslint-plugin-consistent-default-export-name": "^0.0.15",
+    "eslint-plugin-n": "^17.10.3",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "minimatch": "^10.0.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.7.0"
   },
   "scripts": {
     "build": "yarn workspaces foreach --all --topological run build",
