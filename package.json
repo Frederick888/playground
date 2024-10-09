@@ -6,6 +6,14 @@
   },
   "version": "0.0.0",
   "dependencies": {
-    "istextorbinary": "^9.5.0"
+    "id128": "^1.6.6",
+    "mysql2": "^3.11.3",
+    "typeorm": "^0.3.20",
+    "typescript": "4.8.4"
+  },
+  "packageManager": "yarn@4.5.0+sha512.837566d24eec14ec0f5f1411adb544e892b3454255e61fdef8fd05f3429480102806bac7446bc9daff3896b01ae4b62d00096c7e989f1596f2af10b927532f39",
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "ts-node": "^10.9.2"
   }
 }

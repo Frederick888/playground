@@ -1,16 +1,6 @@
-import { Column, DataSource, Entity, PrimaryColumn, UpdateDateColumn, ValueTransformer } from 'typeorm'
+import { Column, DataSource, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm'
 import { UlidMonotonic } from 'id128'
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions.js'
-
-class UlidTransformer implements ValueTransformer {
-  public to(value: UlidMonotonic): Buffer {
-    return Buffer.from(value.bytes)
-  }
-
-  public from(value: Buffer): UlidMonotonic {
-    return UlidMonotonic.construct(new Uint8Array(value))
-  }
-}
 
 @Entity({ name: 'foo' })
 class Foo {
@@ -19,9 +9,8 @@ class Foo {
     type: 'binary',
     length: 16,
     generated: false,
-    transformer: new UlidTransformer(),
   })
-  id!: UlidMonotonic
+  id!: Buffer
 
   @Column({ name: 'bar', type: 'varchar', length: 64, nullable: true })
   bar!: string
@@ -51,7 +40,7 @@ async function main() {
 
   const id = UlidMonotonic.generate()
   const foo = FooRepository.create({
-    id,
+    id: Buffer.from(id.bytes),
   })
   await FooRepository.insert(foo)
   console.log({

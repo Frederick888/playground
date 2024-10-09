@@ -1,4 +1,4 @@
-import { Column, DataSource, Entity, PrimaryColumn, UpdateDateColumn, ValueTransformer } from 'typeorm'
+import { Column, DataSource, Entity, PrimaryColumn, ValueTransformer } from 'typeorm'
 import { UlidMonotonic } from 'id128'
 import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions.js'
 
@@ -25,9 +25,6 @@ class Foo {
 
   @Column({ name: 'bar', type: 'varchar', length: 64, nullable: true })
   bar!: string
-
-  @UpdateDateColumn({ type: 'timestamp', name: 'updated_at' })
-  updatedAt!: Date
 }
 
 const options: MysqlConnectionOptions = {
@@ -60,7 +57,7 @@ async function main() {
   })
 
   foo.bar = 'hello'
-  await FooRepository.save(foo, { reload: true })
+  await FooRepository.save(foo, { reload: false })
   console.log({
     ...foo,
     message: 'Read'
