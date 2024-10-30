@@ -1,11 +1,12 @@
 {
   "name": "playground",
   "license": "Apache-2.0",
+  "packageManager": "yarn@4.5.1",
   "resolutions": {
-    "typescript": "4.8.4"
+    "typescript": "5.6.3"
   },
   "version": "0.0.0",
   "dependencies": {
-    "istextorbinary": "^9.5.0"
+    "typescript": "5.6.3"
   }
 }
