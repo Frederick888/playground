@@ -1,4 +1,4 @@
-" branch stack 1
+" branch tag stack 1.5
 " PR 2
 
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
