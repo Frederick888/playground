@@ -5,7 +5,10 @@
   "version": "0.0.0",
   "dependencies": {
     "@jest/globals": "^29.7.0",
+    "@redis/client": "^5.0.1",
+    "@testcontainers/redis": "^10.24.2",
     "jest": "^29.7.0",
+    "testcontainers": "^10.24.2",
     "ts-jest": "^29.2.4",
     "typescript": "^5.5.4"
   }
