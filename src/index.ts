@@ -7,8 +7,11 @@ class UlidTransformer implements ValueTransformer {
     return Buffer.from(value.bytes)
   }
 
-  public from(value: Buffer): UlidMonotonic {
-    return UlidMonotonic.construct(new Uint8Array(value))
+  public from(value: Buffer | UlidMonotonic): UlidMonotonic {
+    if (value instanceof Buffer) {
+      return UlidMonotonic.construct(new Uint8Array(value))
+    }
+    return value
   }
 }
 
