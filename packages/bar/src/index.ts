@@ -1,6 +1,20 @@
-// import { greetings } from "@playground/shared/utils/index" <- Nope
-// import { bonjour } from "@playground/shared/utils/bonjour" <- Nope
-import { bonjour, greetings } from "@playground/shared/utils"
+import { AppDataSource, FooRepository } from "@playground/shared"
+import { QueryFailedError } from "typeorm"
 
-console.log(greetings())
-console.log(bonjour())
+async function main() {
+  await AppDataSource.initialize()
+
+  try {
+    await FooRepository.doThrow()
+  } catch (err) {
+    console.log({
+      location: 'bar',
+      errIsQueryFailedError: (err instanceof QueryFailedError),
+      err,
+    })
+  } finally {
+    await AppDataSource.destroy()
+  }
+}
+
+main()
