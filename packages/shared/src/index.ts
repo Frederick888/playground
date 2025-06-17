@@ -1,7 +1,7 @@
-import { Column, DataSource, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm'
-import { MysqlConnectionOptions } from 'typeorm/driver/mysql/MysqlConnectionOptions.js'
+import { Column, DataSource, Entity, PrimaryColumn } from 'typeorm';
 
 import { QueryFailedError } from "typeorm";
+import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionOptions.js';
 
 @Entity({ name: 'foo' })
 export class Foo {
@@ -14,22 +14,13 @@ export class Foo {
 
     @Column({ name: 'bar', type: 'varchar', length: 64, nullable: true })
     bar!: string
-
-    @UpdateDateColumn({ type: 'timestamp', name: 'updated_at' })
-    updatedAt!: Date
 }
 
-const options: MysqlConnectionOptions = {
-    type: 'mysql',
-    connectorPackage: 'mysql2',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: '123456',
-    database: 'playground',
+const options: SqliteConnectionOptions = {
+    type: 'sqlite',
+    database: './playground.db',
     logging: true,
     entities: [Foo],
-    charset: 'utf8mb4',
     synchronize: true,
 }
 export const AppDataSource = new DataSource(options)
